@@ -1,8 +1,10 @@
 package Model;
 
-public class SumModel extends CalcModel {
+public class Multiply extends CalcModel {
 
-    public SumModel() {
+    @Override
+    public Double result() {
+        return x * y;
     }
 
     @Override
@@ -14,10 +16,4 @@ public class SumModel extends CalcModel {
     public void setY(Double value) {
         super.y = value;
     }
-
-    @Override
-    public Double result() {
-        return x + y;
-    }
-
 }
