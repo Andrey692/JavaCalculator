@@ -1,8 +1,8 @@
 package Presenter;
 
 import View.View;
-import Logging.Log;
-import Logging.Logtxt;
+import Logging.ConsoleLog;
+
 import Model.SumModel;
 import Model.Divide;
 import Model.Multiply;
@@ -16,24 +16,9 @@ public class Presenter {
         view = v;
     }
 
-    // public void buttonClick() {
-    // Double a = (double) view.getValue("a: ");
-    // Double b = (double) view.getValue("b: ");
-    // model.setX(a);
-    // model.setY(b);
-    // Double result = model.result();
-    // view.print(result, "Sum: ");
-    // }
-
-    /**
-     * Метод, объединяющий получений значений, выбор операции, результат и
-     * логирование
-     */
     public void runOperation() {
-        Log log = new Logtxt();
+        ConsoleLog log = new ConsoleLog();
         String txt = "";
-        // Double x = view.getValue.apply("Введите первое число: ");
-        // Double y = view.inputDouble.apply("Введите второе число: ");
         Double x = (double) view.getValue("Введите первое число: ");
         Double y = (double) view.getValue("Введите второе число: ");
         int choice = view.getChoice();
@@ -66,7 +51,8 @@ public class Presenter {
                 break;
             }
         }
-        log.writeFile(txt, "Saving.txt");
+        log.writeExpressionToConsole(txt);
+
     }
 
 }
